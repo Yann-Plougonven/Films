@@ -39,12 +39,23 @@ class Film():
         return self._titre
     
     def get_annee(self):
+        """
+        >>> f1.get_annee()
+        2005
+        """
         return self._annee
     
+    def get_realisateur(self):
+        return self.realisateur
+    
     def presentation(self):
+        """
+        >>> f1.presentation()
+        'Le roi Yann'
+        """
         return self.get_titre()
     
-    def __repr__(self):
+    def __repr__(self): # Pour avoir le nom et pas l'adresse RAM
         return self.presentation()
     
 
@@ -57,4 +68,8 @@ f2 = Film(2, "apprends l'alphabet avec Dora", 2002)
 r1.ajouter_film(f1)
 r1.ajouter_film(f2)
 
-print(r1.get_films())
+#print(r1.get_films())
+print(f1.presentation())
+
+import doctest
+doctest.testmod()
